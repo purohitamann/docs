@@ -5,7 +5,7 @@ import InfiniteScroll from '../components/InfiniteScroll/InfiniteScroll';
 import TextPressure from '../components/TextPressure/TextPressure';
 import ShinyText from "../components/ShinyText/ShinyText";
 import DecryptedText from "../components/DecryptedText/DecryptedText";
-
+import SpotlightCard from "../components/SpotlightCard/SpotlightCard";
 const items = [
   {
     content: (
@@ -87,17 +87,27 @@ export default function Home() {
           Say goodbye to boilerplate headaches. Boilrplate CLI crafts full-stack projects 
           based on your exact needs — from frontend to backend, all ready to go.  
         </p>
+        <div className="mt-4 flex items-left justify-center">
+      <SpotlightCard className="custom-spotlight-card" >
+
+   <div>
+   <ShinyText text="Be the first to know when its live!" disabled={false} speed={3} className="text-xl" />
+   <br />
+        <button className="mt-4 bg-amber-500 px-4 py-2 rounded-3xl">
+        <p  className="text-xl font-sans"  ><a href="/join-waitlist">Join the Waitlist</a></p>
+        </button>
+       
+   </div>
+         
+
+</SpotlightCard>
+      </div>
 
         {/* Call To Action */}
-        <a
-          href="https://your-waitlist-link.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-8"
-        >
-          <ShinyText text="Join the Waitlist →" disabled={false} speed={3} className="text-2xl" />
-        </a>
+  
       </div>
+
+
     </div>
   );
 }
