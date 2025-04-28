@@ -1,8 +1,8 @@
 // pages/api/join-waitlist.ts
-import type { NextApiRequest, NextApiResponse } from 'next';
+
 import sgMail from '@sendgrid/mail';
 import { NextRequest, NextResponse } from 'next/server';
-sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
+sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY!);
 
 export async function POST(request: NextRequest) {
 

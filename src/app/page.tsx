@@ -8,11 +8,9 @@ import SpotlightCard from "../components/SpotlightCard/SpotlightCard";
 import Image from 'next/image';
 import { useState } from 'react';
 import React from 'react';
-import { db } from '../../backend/firebase'
+import { db } from '../backend/firebase'
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
-import { sendEmail } from '../../backend/mail';
-import { useEffect } from 'react';
-import { send } from 'process';
+import Link from 'next/link';
 const items = [
   {
     content: (
@@ -98,7 +96,8 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-full min-h-screen items-center justify-center px-4 md:px-8 py-8 gap-8">
+    <div className="flex h-full min-h-screen items-center justify-center px-4 md:px-8 py-8 gap-8">
+   
       {/* Left Side - Infinite Scroll */}
       {/* <div className="w-full md:w-1/2 flex justify-center items-center">
         <div style={{ height: '400px', position: 'relative', width: '100%' }} className="max-w-md mx-auto">
@@ -116,6 +115,14 @@ export default function Home() {
 
       {/* Right Side - Welcome Text */}
       <div className="w-full md:w-1/2 flex flex-col justify-center items-start p-4 md:p-8">
+      <div className="flex flex-wrap gap-4 mb-8 text-sm justify-center sm:justify-start font-medium text-stone-600 dark:text-stone-400">
+        <Link href="/">Home</Link>
+        <Link href="https://www.npmjs.com/package/boilrplate" target="_blank">npm registry</Link>
+        <Link href="https://github.com/purohitamann/boilrplate" target="_blank">github</Link>
+        <Link href="/docs">docs</Link>
+      </div>
+
+
         {/* Main Title */}
         <TextPressure
           text="Boilrplate"
@@ -129,9 +136,8 @@ export default function Home() {
           strokeColor="#ff0000"
           minFontSize={28}
         />
-
-        {/* Small Decrypted Slogan */}
-        <div className="mt-4">
+            {/* Small Decrypted Slogan */}
+            <div className="mt-4">
           <DecryptedText
             text=" Skip the stack. Start building."
             speed={50}
@@ -141,6 +147,22 @@ export default function Home() {
           />
         </div>
 
+
+<div className="flex flex-col mt-3 items-center justify-center">
+  <video
+    className="rounded-md shadow-lg max-w-full h-auto"
+
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="none"
+  >
+    <source src="/demo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+    
         {/* Description */}
         <p className="text-md mt-6 max-w-md leading-relaxed">
           Say goodbye to boilerplate headaches. Boilrplate CLI crafts full-stack projects 
@@ -170,7 +192,7 @@ export default function Home() {
             <input 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full sm:flex-1 px-4 py-2 rounded-md border border-gray-300 bg-gray-100 focus:outline-none focus:ring-2 focus:ring-amber-500 text-black placeholder-black"
+              className="w-full sm:flex-1 px-4 py-2 rounded-md border border-gray-300 bg-stone-100 focus:outline-none focus:ring-2 text-black placeholder-black"
               type="email"
               placeholder="Enter your email"
             />
@@ -194,6 +216,18 @@ export default function Home() {
 </div>
 
 
+<div>
+  <p className="text-sm text-stone-500 mt-4">
+    By joining, you agree to <Link href="/terms" className="underline">Terms of Service</Link>.
+  </p>
+</div>
+
+        {/* Footer */}
+        <div className="mt-8">
+          <p className="text-sm text-stone-500">
+            &copy; {new Date().getFullYear()} Boilrplate. All rights reserved.  
+          </p>
+        </div>
 
       </div>
     </div>
