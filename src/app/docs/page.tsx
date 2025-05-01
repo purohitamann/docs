@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import SpotlightCard from '@/components/SpotlightCard/SpotlightCard';
 import ShinyText from '@/components/ShinyText/ShinyText';
 import CopyCommand from '@/components/CopyCommand';
+import Navbar from '@/components/Navbar';
 
 export default function DocsPage() {
   const router = useRouter();
@@ -16,12 +17,7 @@ export default function DocsPage() {
   return (
     <main className="max-w-5xl mx-auto py-12 px-6 sm:px-8 text-stone-800 dark:text-stone-200">
       {/* Top Nav */}
-      <div className="flex flex-wrap gap-4 mb-8 text-sm justify-center sm:justify-start font-medium text-stone-600 dark:text-stone-400">
-        <Link href="/">Home</Link>
-        <Link href="https://www.npmjs.com/package/boilrplate" target="_blank">npm registry</Link>
-        <Link href="https://github.com/purohitamann/boilrplate" target="_blank">github</Link>
-        <Link href="/docs">docs</Link>
-      </div>
+<Navbar />
 
       {/* Main Heading */}
       <h1 className="text-4xl  mb-10 text-center">Documentation</h1>
