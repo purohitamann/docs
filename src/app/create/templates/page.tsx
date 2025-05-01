@@ -1,5 +1,8 @@
 "use client";
 
+import CopyCommand from "@/components/CopyCommand";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import React, { JSX, useState } from "react";
 import {
   SiNextdotjs,
@@ -61,14 +64,25 @@ export default function StackPicker(): JSX.Element {
   const [frontend, setFrontend] = useState<string | null>(null);
   const [backend, setBackend] = useState<string | null>(null);
   const [database, setDatabase] = useState<string | null>(null);
+  const [flat, setFlat] = useState<boolean>(false);
 
+  const [submitted, setSubmitted] = useState(false);
+  const handleFrontendChange = (value: string) => {
+    setFrontend(value);
+    setSubmitted(false);
+  };
   const handleSubmit = () => {
-    console.log({frontend, backend, database });
+    if (!frontend || !backend) {
+      alert("Please select both frontend and backend options.");
+      return;
+    }
+    setSubmitted(true); 
     
   };
 
   return (
     <main className="max-w-3xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <Navbar />
       <h1 className="text-3xl  mb-10 text-center">Pick Your Stack</h1>
 
       <div className="mb-6">
@@ -112,6 +126,18 @@ export default function StackPicker(): JSX.Element {
           ))}
         </div>
       </div>
+      <div className="flex items-center justify-center mb-2">
+
+
+      <label className="flex items-center gap-2 mt-4">
+  <input
+    type="checkbox"
+    checked={flat}
+    onChange={(e) => setFlat(e.target.checked)}
+  />
+  <span className="text-sm text-stone-600 dark:text-stone-300">Create in current folder (--flat)</span>
+</label>
+</div>
 
       <div className="text-center">
         <button
@@ -121,6 +147,17 @@ export default function StackPicker(): JSX.Element {
           Create Stack
         </button>
       </div>
+      {submitted && (
+  <div className="text-center mt-6">
+    <h2 className="text-lg  mb-2">Copy & Run this command in your terminal:</h2>
+
+    <div className="bg-stone-100 dark:bg-stone-800  text-stone-700 dark:text-stone-300 p-2 rounded-lg font-mono flex flex-col sm:flex-row justify-center items-center gap-4">
+   
+      <CopyCommand command={`npx boilrplate --frontend ${frontend} --backend ${backend}${database ? ` --database ${database}` : ''}${flat ? ' --flat' : ''}`} />
+    </div>
+  </div>
+)}
+    <Footer />
     </main>
   );
 }

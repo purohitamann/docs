@@ -6,6 +6,7 @@ import SpotlightCard from '@/components/SpotlightCard/SpotlightCard';
 import ShinyText from '@/components/ShinyText/ShinyText';
 import CopyCommand from '@/components/CopyCommand';
 import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 export default function DocsPage() {
   const router = useRouter();
@@ -37,6 +38,12 @@ export default function DocsPage() {
       <section className="mb-16">
         <h2 className="text-2xl mb-4">How to use Boilrplate CLI</h2>
 
+        <p className="mb-4">
+          Boilrplate CLI is a command-line tool that helps you quickly set up your project with the
+          stack of your choice. You can use it to create a new project or add new features to an
+          existing one.
+        </p>
+
         <div className="bg-stone-100 dark:bg-stone-800 rounded-md p-6 space-y-6 text-sm font-mono text-stone-700 dark:text-stone-300">
           <div>
             <p className="mb-2">Install or use directly:</p>
@@ -44,14 +51,23 @@ export default function DocsPage() {
           </div>
 
           <div>
-            <p className="mb-2">Pick a template:</p>
-            <CopyCommand command="npx boilrplate" />
+            <p className="mb-2">use the framework picker to simply copy then paste on your terminal <Link href="/create/templates">
+              <span className="text-gray-400  underline">
+                Create Project
+              </span>
+            </Link></p>
+          
           </div>
-
+          <div>
+            <p> </p>
+                  <CopyCommand command={`npx boilrplate  [frontend] [backend] [database] --flat`} />
+            
+          </div>
           <div>
             <p className="mb-2">(Coming soon) Use natural language with access code:</p>
             <CopyCommand command='npx boilrplate "I want a Next.js + MongoDB app" --access YOUR-ACCESS-CODE' />
           </div>
+      
         </div>
       </section>
 
@@ -99,10 +115,7 @@ export default function DocsPage() {
       </section>
 
       {/* Footer */}
-      <footer className="text-center text-xs text-stone-400 py-10">
-        © {new Date().getFullYear()} Boilrplate. <Link href="/terms" className="underline">Terms of Service</Link>
-      </footer>
-
+  <Footer />
     </main>
   );
 }
