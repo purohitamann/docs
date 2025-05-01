@@ -1,17 +1,12 @@
 'use client';
 
+import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 
 export default function TermsPage() {
   return (
     <main className="max-w-3xl mx-auto py-12 px-6 text-stone-700 dark:text-stone-300">
-                <div className="flex gap-4 mb-4 text-md font-stone-600 dark:text-stone-400">
-         <a href="/">home</a>
-        <a href="https://www.npmjs.com/package/boilrplate">npm registry</a>
-        <a href="https://github.com/purohitamann/boilrplate">github</a>
-     
-        <a href="/docs">docs</a>
-      </div>
+   <Navbar />
       <h1 className="text-3xl mt-8  mb-8 text-center">Terms of Service</h1>
 
       <div className="space-y-6 leading-relaxed text-sm">
