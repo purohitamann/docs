@@ -52,6 +52,7 @@ function StackCard({ selected, onClick, option }: StackCardProps) {
     >
       {option.icon}
       <span>{option.label}</span>
+      
     </div>
   );
 }
