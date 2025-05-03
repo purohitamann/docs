@@ -153,7 +153,7 @@ export default function StackPicker(): JSX.Element {
 
     <div className="bg-stone-100 dark:bg-stone-800  text-stone-700 dark:text-stone-300 p-2 rounded-lg font-mono flex flex-col sm:flex-row justify-center items-center gap-4">
    
-      <CopyCommand command={`npx boilrplate ${frontend} ${backend}${database ? `${database}` : ''}${flat ? ' --flat' : ''}`} />
+      <CopyCommand command={`npx boilrplate ${frontend} ${backend} ${database ? `${database}` : ''}${flat ? ' --flat' : ''}`} />
     </div>
   </div>
 )}

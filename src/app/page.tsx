@@ -213,7 +213,7 @@ export default function Home() {
 
 <div>
   <p className="text-sm text-stone-500 mt-4">
-    By joining, you agree to <Link href="/terms" className="underline">Terms of Service</Link>.
+    By joining, you agree to <Link href="/terms" className="underline">Terms of Service</Link> & <Link className="underline" href={"/terms/privacy"}>Privacy Policy</Link>
   </p>
 </div>
 
