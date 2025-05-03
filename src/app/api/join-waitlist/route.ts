@@ -1,4 +1,3 @@
-// pages/api/join-waitlist.ts
 
 import sgMail from '@sendgrid/mail';
 import { NextRequest, NextResponse } from 'next/server';
