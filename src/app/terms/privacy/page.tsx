@@ -13,7 +13,7 @@ export default function TermsPage() {
       <p className="mb-4">Effective Date: April 25, 2025</p>
       <p className="mb-6">
         Boilrplate ("we", "us", or "our") provides a command-line interface (CLI) and website (
-        <a href="https://boilrplate.com" className="underline text-blue-500">https://boilrplate.com</a>) to help developers scaffold fullstack projects.
+        <a href="https://boilrplate.com" className="underline text-blue-500">https://www.heyboilrplate.com</a>) to help developers scaffold fullstack projects.
       </p>
 
       <section className="mb-8">
