@@ -12,7 +12,7 @@ export default function TermsPage() {
 
       <p className="mb-4">Effective Date: April 25, 2025</p>
       <p className="mb-6">
-        Boilrplate ("we", "us", or "our") provides a command-line interface (CLI) and website (
+        boilrplate ("we", "us", or "our") provides a command-line interface (CLI) and website (
         <a href="https://boilrplate.com" className="underline text-blue-500">https://www.heyboilrplate.com</a>) to help developers scaffold fullstack projects.
       </p>
 
@@ -32,6 +32,7 @@ export default function TermsPage() {
           <li>Interaction data (e.g., page views, clicks)</li>
         </ul>
       </section>
+
 
       <section className="mb-8">
         <h2 className="text-xl mb-2">2. How We Use the Data</h2>
