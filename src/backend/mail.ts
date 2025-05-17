@@ -14,10 +14,10 @@ if (!SENDGRID_API_KEY) {
 
 sgMail.setApiKey(SENDGRID_API_KEY);
 
-// Define your email payload using MailDataRequired (type-safe)
+
 const msg: MailDataRequired = {
-  to: 'amanpurohit2004@gmail.com',    // Change to your recipient
-  from: 'purohitaman@icloud.com', // Must be your verified sender
+  to: 'amanpurohit2004@gmail.com',   
+  from: 'purohitaman@icloud.com',
   subject: '🎉 You are on the Waitlist!',
   text: 'Thanks for signing up for early access to Boilrplate CLI!',
   html: `
