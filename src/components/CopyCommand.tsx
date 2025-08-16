@@ -6,7 +6,7 @@ export default function CopyCommand({ command }: { command: string }) {
   async function handleCopy() {
     await navigator.clipboard.writeText(command);
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500); // Reset after 1.5s
+    setTimeout(() => setCopied(false), 1500); 
   }
 
   return (

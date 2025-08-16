@@ -16,7 +16,7 @@ export default function DocsPage() {
   }
 
   return (
-    <main className="max-w-5xl mx-auto py-12 px-6 sm:px-8 text-stone-800 dark:text-stone-200">
+    <main className="max-w-3xl mx-auto py-12 px-6 sm:px-8 text-stone-800 dark:text-stone-200">
       {/* Top Nav */}
 <Navbar />
 
@@ -32,6 +32,23 @@ export default function DocsPage() {
           <li>AI-powered project generation is currently in early access (join waitlist).</li>
           <li>Automatic personalization of `.env`, `package.json`, and `README.md` files.</li>
         </ul>
+      </section>
+      <section className="mb-16 relative">
+        {/* Highlight effect */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="w-full h-full bg-gradient-to-r from-yellow-100 via-stone-200 to-stone-300 opacity-30 rounded-lg blur-md"></div>
+        </div>
+        <div className="relative z-10">
+          <h2 className="text-2xl mb-4 font-bold  flex items-center gap-2">
+        <span className="animate-pulse">✨</span>
+        What's New?
+          </h2>
+          <ul className="list-disc list-inside space-y-2 text-stone-700 dark:text-stone-300">
+        <li>Full AI-powered project scaffolding based on natural language prompts using Generative AI</li>
+        <li>Enhanced template customization options</li>
+        <li>Backed by LLM models like DeepSeek and Llama</li>
+          </ul>
+        </div>
       </section>
 
       {/* How to use Boilrplate CLI */}
@@ -64,7 +81,7 @@ export default function DocsPage() {
             
           </div>
           <div>
-            <p className="mb-2">(Coming soon) Use natural language with access code:</p>
+            <p className="mb-2">(NEW!) Use natural language with access code:</p>
             <CopyCommand command='npx boilrplate "I want a Next.js + MongoDB app" --access YOUR-ACCESS-CODE' />
           </div>
       
@@ -72,15 +89,16 @@ export default function DocsPage() {
       </section>
 
       {/* Coming Soon */}
-      <section className="mb-16">
-        <h2 className="text-2xl  mb-4">Coming Soon</h2>
+     
+   {/* <section className="mb-16">
+        <h2 className="text-2xl  mb-4">What's Coming?</h2>
         <ul className="list-disc list-inside space-y-2 text-stone-600 dark:text-stone-400">
-          <li>Full AI-powered project scaffolding based on natural language prompts.</li>
-          <li>Optional personal project analytics (privacy-first, opt-in only).</li>
+    <li>Optional personal project analytics (privacy-first, opt-in only).</li>
           <li>Themeable starter templates (dark mode, corporate UI, e-commerce templates).</li>
           <li>Plugin integrations for auth, payments, CMS, and more.</li>
         </ul>
-      </section>
+      </section> */}
+        
 
       {/* Waitlist Card */}
       <section className="flex justify-center items-center mt-24 px-4">
@@ -91,13 +109,13 @@ export default function DocsPage() {
               {/* Heading */}
               <div>
                 <ShinyText
-                  text="Get Early Access"
+                  text="Get Free Access"
                   disabled={false}
                   speed={3}
                   className="text-2xl text-stone-600"
                 />
                 <p className="text-sm text-stone-400 mt-2">
-                  Be first to know when AI features launch.
+                  Signup to get the free early access to Boilrplate CLI and be the first to try it out.
                 </p>
               </div>
 

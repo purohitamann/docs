@@ -1,11 +1,7 @@
-// backend/mail.ts
-
 import sgMail, { MailDataRequired } from '@sendgrid/mail';
 import dotenv from 'dotenv';
 
 dotenv.config();
-
-// Make sure your SENDGRID_API_KEY is available
 const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
 
 if (!SENDGRID_API_KEY) {
@@ -18,13 +14,13 @@ sgMail.setApiKey(SENDGRID_API_KEY);
 const msg: MailDataRequired = {
   to: 'amanpurohit2004@gmail.com',   
   from: 'purohitaman@icloud.com',
-  subject: '🎉 You are on the Waitlist!',
+  subject: 'Free Access Code',
   text: 'Thanks for signing up for early access to Boilrplate CLI!',
   html: `
     <div style="font-family: Arial, sans-serif; padding: 20px;">
       <h2>Welcome aboard!</h2>
       <p>Thanks for joining the Boilrplate CLI waitlist 🚀</p>
-      <p>We’ll notify you the moment it’s ready!</p>
+      <p>boilrplate CLI Beta is out now! use the access code <strong>BLRP-CLI-AP</strong> to use boilerplate in natural language.</p>
     </div>
   `,
 };
@@ -33,20 +29,20 @@ export async function sendEmail(to: string) {
   const msg: MailDataRequired = {
     to,
     from: process.env.SENDER_EMAIL || 'purohitaman@icloud.com',
-    subject: '🎉 You are on the Waitlist!',
+    subject: 'Free Access Code',
     text: 'Thanks for signing up for early access to Boilrplate CLI!',
     html: `
      <div style="font-family: 'Segoe UI', Roboto, sans-serif; padding: 24px; background-color: #f9fafb; color: #333;">
   <div style="max-width: 600px; margin: auto; background: #ffffff; padding: 32px; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.05);">
     
-    <h2 style="font-size: 24px; margin-bottom: 16px;">🎉 You're officially on the Boilrplate CLI waitlist!</h2>
+    <h2 style="font-size: 24px; margin-bottom: 16px;">Heres your free Access Code</h2>
 
     <p style="font-size: 16px; line-height: 1.6;">
       Thanks for signing up! You've taken the first step towards skipping boilerplate setup and jumping straight into building your next big idea.
     </p>
 
     <p style="font-size: 16px; line-height: 1.6;">
-      I am still working some to powerful AI integration to make your project setup quick and easy. You'll be among the first to know when Boilrplate CLI is ready to launch.
+      boilrplate CLI Beta is out now! use the access code <strong>BLRP-CLI-AP</strong> to use boilerplate in natural language.
     </p>
 
     <div style="text-align: center; margin-top: 32px;">
@@ -67,9 +63,9 @@ export async function sendEmail(to: string) {
 
   try {
     const response = await sgMail.send(msg);
-    console.log('✅ Email sent successfully!', response[0].statusCode);
+    console.log('Email sent successfully!', response[0].statusCode);
   } catch (error: any) {
-    console.error('❌ Error sending email:');
+    console.error('Error sending email:');
     if (error.response) {
       console.error(error.response.body);
     } else {
@@ -77,6 +73,3 @@ export async function sendEmail(to: string) {
     }
   }
 }
-
-// Run the function
-// sendEmail();
