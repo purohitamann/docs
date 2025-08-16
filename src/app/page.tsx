@@ -127,7 +127,7 @@ export default function Home() {
       <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 20a8 8 0 100-16 8 8 0 000 16z" />
     </svg>
     <span className="font-semibold">New Release!</span>
-    <span>Boilrplate CLI Beta 2.0.2 is out now.</span>
+    <span>Boilrplate CLI (v2.0.2) Beta is out now.</span>
   </div>
   <p className="text-sm text-stone-500 mt-2">
     boilerplating is now about to AI! use --access BLRP-CLI-AP to use boilerplate in natural language.
@@ -157,9 +157,9 @@ export default function Home() {
   <SpotlightCard className="custom-spotlight-card rounded-xl shadow-md py-6 px-6 bg-[#f9fafb] dark:bg-[#1f1f1f]">
     <div className="flex flex-col items-start gap-4">
           <div>
-            <ShinyText text="Get early access" disabled={false} speed={3} className="text-xl text-gray-500" />
+            <ShinyText text="Get Free access" disabled={false} speed={3} className="text-xl text-gray-500" />
             <p className="text-sm text-stone-500 mt-1">
-               Signup to get the free early access to Boilrplate CLI and be the first to try it out.
+               Signup to get the free access to Boilrplate CLI and be the first to try it out.
             </p>
           </div>
 
